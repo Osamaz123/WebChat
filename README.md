@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WebChat
+WebChat is a web application that allows users to chat with any website by simply appending the target URL to the base URL. It provides an AI-powered interactive experience to help users explore and understand the content of websites in real-time.
+
+## Features
+- Website Interaction: Users can chat with the content of any website by appending its URL to the WebChat base URL.
+- AI-Powered: The app leverages OpenAI’s language model to generate meaningful responses based on the website's content.
+- User-Friendly Interface: A smooth, intuitive chat interface for seamless interaction.
+- Real-time Responses: Get quick responses from the AI model without having to leave the WebChat interface.
+
 
 ## Getting Started
 
