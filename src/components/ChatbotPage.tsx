@@ -13,7 +13,7 @@ interface ChatbotPageProps {
 
 export default function ChatbotPage({ sessionId, initialMessages, websiteUrl }: ChatbotPageProps) {
   const [error, setError] = useState<string | null>(null)
-  const { messages, handleInputChange, handleSubmit, input, setInput, isLoading } = useChat({
+  const { messages, handleInputChange, handleSubmit, input, isLoading } = useChat({
     api: "/api/chat-stream",
     body: { sessionId },
     initialMessages,
