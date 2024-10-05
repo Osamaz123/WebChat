@@ -1,44 +1,75 @@
 # WebChat
-WebChat is a web application that allows users to chat with any website by simply appending the target URL to the base URL. It provides an AI-powered interactive experience to help users explore and understand the content of websites in real-time.
+
+WebChat is an innovative tool that allows users to chat with the content of any website. By leveraging AI technology and Upstash's vector database, this application provides an interactive way to explore and understand web content through natural language conversations.
 
 ## Features
-- Website Interaction: Users can chat with the content of any website by appending its URL to the WebChat base URL.
-- AI-Powered: The app leverages OpenAI’s language model to generate meaningful responses based on the website's content.
-- User-Friendly Interface: A smooth, intuitive chat interface for seamless interaction.
-- Real-time Responses: Get quick responses from the AI model without having to leave the WebChat interface.
 
+- Chat with any website's content
+- User-friendly interface
+- Real-time AI-powered responses
+- Responsive design for various screen sizes
+- Error handling and informative user feedback
+- Efficient data storage and retrieval using Upstash Vector and Redis
+
+## Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Upstash Vector
+- Upstash Redis
+- QStash
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v14 or later)
+- npm or yarn
+- Upstash account
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```
+   git clone https://github.com/Osamaz123/WebChat.git
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Navigate to the project directory:
+   ```
+   cd webchat
+   ```
 
-## Learn More
+3. Install dependencies:
+   ```
+   npm install
+   ```
+   or
+   ```
+   yarn install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Set up environment variables:
+   Create a `.env.local` file in the root directory and add the following variables:
+   ```
+   UPSTASH_VECTOR_REST_URL=your_upstash_vector_rest_url
+   UPSTASH_VECTOR_REST_TOKEN=your_upstash_vector_rest_token
+   QSTASH_TOKEN=your_qstash_token
+   UPSTASH_REDIS_REST_URL=your_upstash_redis_rest_url
+   UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_rest_token
+   ```
+   ## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. On the home page, enter the URL of the website you want to chat about.
+2. Click "Start Chatting" to begin the conversation.
+3. Type your questions or comments in the chat input field.
+4. The AI will respond with information based on the website's content.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How It Works
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. When a user enters a website URL, WebChat crawls the site and extracts relevant content.
+2. The extracted content is processed and stored in Upstash Vector, which allows for efficient similarity searches.
+3. User queries are compared against the stored vector representations to find the most relevant information.
+4. Upstash Redis is used for caching and managing chat sessions.
+5. QStash is utilized for managing asynchronous tasks and background jobs.
